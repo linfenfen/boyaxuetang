@@ -1,0 +1,69 @@
+<!--pages/mainIndex/mainIndex.wxml-->
+<import src='/pages/wxml/navigation.wxml' />
+<view class='container'>
+  <view class='searchContainer'>
+    <view class='searchBox'>
+      <image src='/images/icon/search.png'></image>
+      <input class='searchInput' type='text' placeholder-class='inputPlace' placeholder='搜索你想要的课程' />
+    </view>
+  </view>
+  <view class='classify'>
+    <view class='item' wx:for='{{classTypeData}}' wx:for-item='classType' wx:key='{{classType.id}}' data-id='{{classType.id}}'>
+      <image src='https://www.boyaxuetang.top/boya/{{classType.imagePath}}'></image>
+      <text>{{classType.typeName}}</text>
+    </view>
+    <!-- <view class='item'>
+      <image src='/images/classify/draw.png'></image>
+      <text>绘画</text>
+    </view>
+    <view class='item'>
+      <image src='/images/classify/perform.png'></image>
+      <text>表演</text>
+    </view>
+    <view class='item'>
+      <image src='/images/classify/photo.png'></image>
+      <text>摄影</text>
+    </view>
+    <view class='item'>
+      <image src='/images/classify/dance.png'></image>
+      <text>舞蹈</text>
+    </view>
+    <view class='item'>
+      <image src='/images/classify/idea.png'></image>
+      <text>创意</text>
+    </view>
+    <view class='item'>
+      <image src='/images/classify/reading.png'></image>
+      <text>阅读</text>
+    </view>
+    <view class='item'>
+      <image src='/images/classify/more.png'></image>
+      <text>更多</text>
+    </view> -->
+  </view>
+  <view class='hotClass'>
+    <text class='hotTitle'>热门课程</text>
+    <view class='classBox'>
+      <navigator url='/pages/courseDetail/courseDetail?classId={{item.classId}}' class='classItem' wx:for='{{classData}}' wx:for-item='item' wx:key='{{item.classId}}' wx:if='{{item.status==0}}'>
+        <view class='leftItem'>
+          <image src='https://www.boyaxuetang.top/boya/{{item.classImagePath}}'></image>
+        </view>
+        <view class='midItem'>
+          <text class='title'>{{item.className}}</text>
+          <text class='time'>{{item.classBeginTime}}</text>
+          <text class='address'>{{item.classRoom}}</text>
+        </view>
+        <view class='rightItem'>
+          <view class='mastar'>
+            <text>(达人机构)</text>
+            <text wx:if='{{teacherType==1}}'>达人</text>
+            <text wx:else>机构</text>
+          </view>
+          <button type='button' catchtap='onJumpBack' data-url='/pages/payMoney/payMoney?classId={{item.classId}}'>报名</button>
+          <button disabled='{{item.isAllowGroup==0}}' catchtap='onJumpBack' data-url='/pages/pinke/pinke?classId={{item.classId}}' type='button'>拼课</button>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>
+<template is='navigation' data='{{navigationUrl}}'/>

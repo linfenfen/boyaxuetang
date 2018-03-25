@@ -1,0 +1,24 @@
+<!--pages/dingdan/dingdan.wxml-->
+<view class='container'>
+  <view class='dingdanDetail'>
+    <view class='left'>
+      <img src='https://www.boyaxuetang.top/boya/{{class.classImagePath}}' />
+    </view>
+    <view class='right'>
+      <view class='item'>
+        <view class='name'>课程：{{class.className}}</view>
+      </view>
+      <view class='item'>
+        <view class='lf'><text class='money'>价格：￥{{price}}</text><text class='address'>地点：{{class.classRoom}}</text></view>
+      </view>
+      <view class='item'>
+        <view class='time'>创建于{{dingdan.addTime}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='btnGroup payGroup'>
+    <button wx:if='{{dingdan.isPaid==0}}' class='btn paybtn' catchtap='pay'>付款 ￥{{price}}</button>
+    <button wx:elif='{{dingdan.isPaid==1}}' class='btn'>已支付</button>
+    <button wx:elif='{{dingdan.isPaid==2}}' class='btn'>已退款</button>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+<!--pages/pinke/pinke.wxml-->
+<import src='/pages/wxml/navigation.wxml' />
+<view class='container'>
+  <view class='userwrapper'>
+    <view class='userItem'>
+      <view class='user-bg'>
+        <image class='avator add' src='https://www.boyaxuetang.top/boya/{{user.imagePath}}' />
+      </view>
+    </view>
+    <view class='userItem'>
+      <view catchtap='onShareAppMessage' class='user-bg'>
+        <image class='add' src='../../images/pinke/add.png' />
+      </view>
+    </view>
+    <view class='userItem'>
+      <view class='user-bg'>
+        <image class='add' src='' />
+      </view>
+    </view>
+    <view class='userItem'>
+      <view class='user-bg'>
+        <image class='add' src='' />
+      </view>
+    </view>
+    <view class='userItem'>
+      <view class='user-bg'>
+        <image class='add' src='' />
+      </view>
+    </view>
+  </view>
+  <view class='textwrapper'>
+    <view class='textItem'><text class='txt'>拼成立减{{class.singlePrice-class.groupPrice}}</text></view>
+    <view class='textItem'><text class='txt'>{{class.className}}</text></view>
+    <view class='textItem'><text class='txt'>倒计时：<text class='countDown'>08：10：09</text></text></view>
+  </view>
+  <navigator url='/pages/payMoney/payMoney?classId={{class.id}}&&pin=1' class='btn'>上车（付款）</navigator>
+</view>
+<template is='navigation' data='{{navigationUrl}}'/>

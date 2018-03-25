@@ -1,0 +1,21 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/mainIndex/mainIndex",
+    "pages/myClass/myClass",
+    "pages/userCenter/userCenter",
+    "pages/becomeMonito/becomeMonito",
+    "pages/publishClass/publishClass",
+    "pages/payMoney/payMoney",
+    "pages/courseDetail/courseDetail",
+    "pages/pinke/pinke",
+    "pages/dingdan/dingdan"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "博雅学堂",
+    "navigationBarTextStyle":"black"
+  }
+}

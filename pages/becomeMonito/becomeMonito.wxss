@@ -1,0 +1,104 @@
+/* pages/becomeMonito/becomeMonito.wxss */
+@import "/pages/wxss/navigation.wxss";
+.container{
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:140rpx;
+  overflow-x: hidden; 
+}
+.container .addImage{
+  display:flex;
+  justify-content: space-between;
+  width:95%;
+  height:100rpx;
+  margin:20rpx auto 0;
+  padding:15rpx 30rpx;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  background-color: #a4f1b8;
+  box-shadow: -4rpx 4rpx 8rpx #c1c8c6;
+}
+.container .addImage image{
+  width:70rpx;
+  height:70rpx;
+  display:inline-block;
+  border-radius: 50%;
+  background-color: #555;
+}
+.container .addImage button{
+  width:200rpx;
+  height:40rpx;
+  display:inline-block;
+  margin:0;
+  margin-top:15rpx;
+  font-size:26rpx;
+  line-height: 40rpx;
+  color:#077225;
+  background-color:#d3ead9;
+}
+
+.container .detailwrapper{
+  width:100%;
+  padding-top:44rpx;
+}
+.container .detailwrapper .line{
+  width:100%;
+  margin-bottom: 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.container .detailwrapper .line .left{
+  width:26%;
+  height:50rpx;
+  line-height:50rpx;
+  color:#077225;
+  background-color:rgba(202, 240, 219, 0.4);
+  text-align: center;
+  border-radius: 0 25rpx 25rpx 0;
+  box-shadow: 2rpx 4rpx #c1c8c6;
+}
+.container .detailwrapper .line .right{
+  width:65%;
+  height:50rpx;
+  margin-right:2%;
+  line-height:50rpx;
+  text-align: center;
+  background-color:rgba(202, 240, 219, 0.4);
+  border-radius: 25rpx;
+  box-shadow: -4rpx 4rpx #c1c8c6;
+}
+.container .detailwrapper .line .right.longtext{
+  box-sizing: border-box;
+  padding:5rpx 15rpx;
+  height:250rpx;
+  text-align: left;
+  box-shadow: 0 0;
+  border:2rpx solid #9bcfa8;
+}
+.container .detailwrapper .line .right.longtext textarea{
+  width: 100%;
+}
+.container .disclaimer{
+  margin-top:40rpx;
+}
+.container .disclaimer .radio{
+  display: inline-block;
+  line-height:46rpx;
+  font-size:30rpx;
+  color:#077225;
+  font-weight: bold;
+}
+.container .submitBtn{
+  width:35%;
+  height:60rpx;
+  line-height:60rpx;
+  font-size:30rpx;
+  margin:30rpx auto;
+  border:0;
+  border-radius:15rpx;
+  box-shadow: -4rpx 4rpx 8rpx #c1c8c6;
+  color:#077225;
+  background-color:#bbefd9;
+}

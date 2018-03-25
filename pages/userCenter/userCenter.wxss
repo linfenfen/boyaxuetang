@@ -1,0 +1,148 @@
+/* pages/userCenter/userCenter.wxss */
+@import "/pages/wxss/navigation.wxss";
+/*个人基本信息*/
+.container{
+  background-color: #f7f7f7;
+}
+.user{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:20rpx 0;
+  background-color: #fff;
+}
+.user image.userImg{
+  width:200rpx;
+  height:200rpx;
+  border-radius: 50%;
+  background-color:#a4a5a5;
+  margin-bottom:15rpx;
+}
+.user text.userName{
+  position:relative;
+  font-size:30rpx;
+  color:#32b07f;
+  font-weight:bold;
+}
+.user .userName .modifybtn{
+  width:100rpx;
+  position:absolute;
+  right:-70rpx;
+  font-size:26rpx;
+  line-height:40rpx;
+  text-align: right;
+  color:#a4a5a5;
+  font-weight:normal;
+}
+/*tab选项卡*/
+.selectTab{
+  width:40%;
+  margin:50rpx auto 50rpx auto;
+}
+.selectTab .activeTab{
+  width:100%;
+  box-sizing: border-box;
+  display:inline-block;
+  font-size: 28rpx;
+  font-weight: bold;
+  text-align: center;
+  padding:12rpx 0;
+  background-color:#b3dbc0;
+  border-radius: 8rpx;
+}
+
+/*功能点*/
+.function{
+  display: flex;
+  flex-direction: column;
+  
+}
+.function .functionBox{
+   display: flex;
+  flex-direction: row;
+  margin:30rpx 0;
+}
+/*偶数*/
+.function .functionBox:nth-child(odd){
+  justify-content: flex-end;
+}
+/*奇数*/
+.function .functionBox:nth-child(even){
+  justify-content: flex-start;
+}
+.function .functionItem{
+  display: flex;
+  flex-direction: row;
+  width:96%;
+  box-sizing:border-box;
+  line-height: 50rpx;
+  font-weight: bold;
+  font-size:28rpx;
+  padding:8rpx 0;
+  border:1px solid #b3dbc0;
+}
+ .functionBox:nth-child(odd) .functionItem{
+   border-radius:10px 0 0 10px;
+   background-color:#b3dbc0;
+}
+.functionBox:nth-child(even) .functionItem{
+   border-radius:0 10px 10px 0;
+   background-color:#f7f7f7;
+   border-left:0;
+}
+.functionItem .itemLeft{
+  width:50%;
+  text-align: center;
+}
+ .functionBox:nth-child(odd) .functionItem .itemLeft{
+  margin-left:-2.5%;
+}
+.functionBox:nth-child(even) .functionItem .itemLeft{
+  margin-left:2%;
+}
+.functionItem .itemRight{
+    width:45%;
+    text-align: right;
+}
+
+/* showBox 修改信息的弹框*/
+.showBox{
+  position:relative;
+  width:100%;
+  height:100%;
+  z-index:1000;
+  background-color: rgba(7,17,27,0.68);
+}
+.formBox{
+  display:flex;
+  justify-content:center;
+}
+.formBox form{
+  display: flex;
+  flex-direction: column;
+  width:80%;
+  margin-top:10%;
+  padding:30rpx;
+  background-color: #fff;
+}
+.formBox form .label{
+  display:block;
+  font-size:32rpx;
+  margin-bottom:16rpx;
+}
+.formBox form .modifyName{
+  padding:10rpx 0 10rpx 20rpx;
+  border:1px solid #ddd;
+}
+.formBox form .btn-group{
+  display:flex;
+  align-items: center;
+  margin-top:20rpx;
+}
+form .btn-group .btn{
+  width:40%;
+}
+.btn.btn-confirm{
+  background-color: #09BB07;
+}

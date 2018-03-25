@@ -1,0 +1,52 @@
+<!--pages/userCenter/userCenter.wxml-->
+<import src='/pages/wxml/navigation.wxml' />
+<view class='container'>
+  <view class='user'>
+    <image class='userImg' catchtap='chooseImg' src='https://www.boyaxuetang.top/boya/{{user.imagePath}}'></image>
+    <text class='userName'  catchtap='showModifyBox'><text class='modifybtn'>修改</text>{{user.userName}}</text>
+  </view>
+  <view class='selectTab'>
+    <navigator url='/pages/becomeMonito/becomeMonito' wx:if='{{user.userType!=1}}' class='activeTab'>成为大神</navigator>
+    <navigator url='/pages/publishClass/publishClass' wx:else class='activeTab'>发布课程</navigator>
+  </view>
+  <view class='function'>
+    <view class='functionBox'>
+      <view class='functionItem'>
+        <text  class='itemLeft'>我的大神</text>
+        <text  class='itemRight'>></text>
+      </view>
+    </view>
+    <view class='functionBox'>
+      <view class='functionItem'>
+        <text class='itemLeft'>我的主页</text>
+        <text class='itemRight'>></text>
+      </view>
+    </view>
+     <view class='functionBox'>
+      <view class='functionItem'>
+        <text class='itemLeft'>关于合作</text>
+        <text class='itemRight'>></text>
+      </view>
+    </view>
+     <view class='functionBox'>
+      <view class='functionItem'>
+        <text class='itemLeft'>联系客服</text>
+        <text class='itemRight'>></text>
+      </view>
+    </view>
+  </view>
+</view>
+<!--修改基本信息弹框-->
+<view class='showBox' hidden='{{!modifyBoxFlag}}'>
+  <view class='formBox'>
+    <form>
+      <text class='label'>姓名</text>
+      <input class='modifyName' type='text' value='{{user.userName}}' bindinput='userName'/>
+      <view class='btn-group'>
+        <button class='btn btn-confirm' catchtap='onchangInfo'>确认</button>
+        <button class='btn btn-cancel' catchtap='hideModifyBox'>取消</button>
+      </view>
+    </form>
+  </view>
+</view>
+<template is='navigation' data='{{navigationUrl}}'/>

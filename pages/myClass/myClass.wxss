@@ -1,0 +1,22 @@
+/* pages/myClass/myClass.wxss */
+@import "/pages/wxss/class.wxss";
+@import "/pages/wxss/navigation.wxss";
+@import "/pages/wxss/tab.wxss";
+/*课程*/
+.classBox .classItem{
+   background-color: #f7f7f7;
+}
+/*成为达人*/
+.becomeMastar{
+  width:100%;
+}
+.becomeMastar text{
+  display:block;
+  width:60%;
+  margin:0 auto;
+  padding:10rpx;
+  background-color:#b3dbc0;
+  text-align:center;
+  color:#fff;
+  font-weight: bold;
+}

@@ -1,0 +1,104 @@
+/* pages/courseDetail/courseDetail.wxss */
+@import "/pages/wxss/navigation.wxss";
+.user{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:20rpx 0;
+  background-color: #fff;
+}
+.user image.userImg{
+  width:240rpx;
+  height:240rpx;
+  border-radius: 50%;
+  background-color:#a4a5a5;
+  margin-bottom:15rpx;
+}
+.user text.userName{
+  position:relative;
+  font-size:30rpx;
+  color:#32b07f;
+  font-weight:bold;
+}
+.user .userName .modifybtn{
+  width:100rpx;
+  position:absolute;
+  right:-70rpx;
+  font-size:26rpx;
+  line-height:40rpx;
+  text-align: right;
+  color:#a4a5a5;
+  font-weight:normal;
+}
+
+/*轮播图*/
+.swiper {
+  height: 400rpx;
+  width: 100%;
+  margin:20rpx 0 30rpx;
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+
+.courseTitle{
+  width:100%;
+  padding:10rpx 30rpx;
+  box-sizing: border-box;
+}
+.courseTitle text{
+  width:100%;
+  font-size: 36rpx;
+  font-weight:bold;
+  line-height:60rpx;
+}
+
+.courseIntroduce{
+  font-size:28rpx;
+  line-height:30rpx;
+  padding:10rpx 30rpx;
+  color:#555;
+}
+.courseIntroduce view{
+   padding:10rpx 0;
+}
+.courseIntroduce view text{
+  display:inline-block;
+  width:50%;
+}
+
+.commitwrapper{
+  margin-top:20rpx;
+  padding:10rpx 30rpx;
+}
+.commitwrapper .title{
+  font-size:30rpx;
+  font-weight:bold;
+  color:#555;
+}
+.commitwrapper .commit{
+}
+.commitwrapper .commit .commit-item{
+  padding:20rpx 10rpx;
+  font-size:28rpx;
+  line-height:40rpx;
+  color:#a4a5a5;
+  border-bottom:2rpx solid #efefef;
+}
+.commitwrapper .commit .commit-item:last-child{
+  border:0
+}
+
+/* 底部导航*/
+.navigationBar .item{
+  border-right:4rpx solid #a4a5a5;
+}
+.navigationBar .item text{
+  font-size:32rpx;
+  color:#0a0a0a;
+}
+.navigationBar .item:last-child{
+  border-right:none;
+}

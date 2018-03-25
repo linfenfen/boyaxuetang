@@ -1,0 +1,92 @@
+/* pages/publishClass/publishClass.wxss */
+@import "/pages/wxss/navigation.wxss";
+.container{
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:140rpx;
+}
+.container .formwrapper{
+  width:100%;
+  margin-top: 64rpx;
+}
+.container .formwrapper .line{
+  width:100%;
+  padding:0 52rpx;
+  margin-bottom:60rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+.container .formwrapper .line .left{
+   width:25%; 
+  font-size:30rpx;
+  font-weight:bold;
+}
+.container .formwrapper .line .right{
+   flex:1;
+   height:48rpx;
+}
+.container .formwrapper .line .right input{
+  width:100%; 
+  height:100%;
+  padding:0 10rpx;
+  display:inline-block;
+  box-sizing:border-box;
+  border:1px solid #78502c;
+}
+.container .formwrapper .line .item{
+  margin-right: 20rpx;
+  flex:1;
+  display:flex;
+  align-items: center;
+}
+.container .formwrapper .line .item:last-child{
+  margin:0;
+}
+.container .formwrapper .line .item .left{
+  font-size:26rpx;
+  font-weight:normal;
+  width:unset;
+  margin-right:10rpx;
+}
+.container .formwrapper .line .item .right.pikerwrapper{
+  width:100%;
+  box-sizing:border-box;
+  border:1px solid #78502c;
+}
+.container .formwrapper .line .item .right{
+  line-height:46rpx;
+}
+
+.container .formwrapper .courseIntroduction{
+  width:100%;
+  box-sizing: border-box;
+  padding:0 52rpx;
+}
+.container .formwrapper .courseIntroduction .title{
+  font-size:30rpx;
+  font-weight: bold;
+  margin-bottom:40rpx;
+}
+.container .formwrapper .courseIntroduction .textwrapper{
+  width:90%;
+  margin:0 auto 60rpx;
+  border:1px solid #78502c;
+}
+.container .formwrapper .courseIntroduction .textwrapper textarea{
+  padding:10rpx;
+}
+.container .submitBtn{
+  width:35%;
+  height:60rpx;
+  line-height:60rpx;
+  font-size:30rpx;
+  margin:30rpx auto;
+  border:0;
+  border-radius:15rpx;
+  box-shadow: -4rpx 4rpx 8rpx #c1c8c6;
+  /* color:#077225;
+  background-color:#bbefd9; */
+}

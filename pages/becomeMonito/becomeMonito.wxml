@@ -1,0 +1,67 @@
+<!--pages/becomeMonito/becomeMonito.wxml-->
+<import src='/pages/wxml/navigation.wxml' />
+<view wx:if='{{user.userType==0}}' class='container'>
+  <form bindsubmit='formSubmit' bindreset='formReset'>
+  <view class='addImage'>
+    <image src='https://www.boyaxuetang.top/boya/{{bindImage}}'></image>
+    <button catchtap='addImage'>添加头像</button>
+  </view>
+  <view class='detailwrapper'>
+    <view class='line'>
+      <view class='left'>称呼</view>
+      <view class='right'>
+        <input type='text' name='name' bindinput='nameInput'></input>
+      </view>
+    </view>
+    <view class='line'>
+      <view class='left'>手机号</view>
+      <view class='right'>
+        <input type='number' name='tel' maxlength='11' bindinput='telInput'></input>
+      </view>
+    </view>
+    <view class='line'>
+      <view class='left'>你的简介</view>
+      <view class='right'>
+        <input name='description' bindinput='descriptionInput' type='text'></input>
+      </view>
+    </view>
+    <view class='line'>
+      <view class='left'>擅长的领域</view>
+      <view class='right'>
+        <picker bindchange="bindPickerChange" value="{{rangeIndex}}" range="{{rangeArr}}">
+          <view class="picker">
+              <input name="specialize" value=" {{rangeArr[rangeIndex]}}"/>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='line'>
+      <view class='left'>达人/机构</view>
+      <view class='right'>
+         <picker bindchange="bindPickerChange" value="{{index}}" range="{{arr}}">
+          <view class="picker">
+              <input value=" {{arr[index]}}"/>
+               <input type='hidden' name="teacherType" value="{{index}}"/>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='line'>
+      <view class='left'>资历或经验介绍</view>
+      <view class='right longtext'>
+        <textarea name='experience' bindinput='experienceInput'></textarea>
+      </view>
+    </view>
+    <view class='disclaimer'>
+      <label class="radio">
+        <radio value="{{yes}}" checked='{{yes}}' catchtap='agree'/>同意法律声明和隐私政策
+      </label>
+    </view>
+    <input type='hidden' name="userId" value="{{user.id}}"/>
+    <input type='hidden' name="imagePath" value="{{bindImage}}"/>
+    <button class='submitBtn' form-type='submit' wx:if='{{yes}}' disabled='{{name==""||tel==""||description==""||experience==""||bindImage==""}}'>提交申请</button>
+  </view>
+  </form>
+</view>
+<view wx:elif='{{user.userType==2}}' class='container'>资料正在审核</view>
+<template is='navigation' data='{{navigationUrl}}'/>

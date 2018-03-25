@@ -1,0 +1,71 @@
+/* pages/pinke/pinke.wxss */
+@import "/pages/wxss/navigation.wxss";
+.container .userwrapper{
+  width:600rpx;
+  margin:40rpx auto 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.container .userwrapper .userItem{
+  width:33%;
+  margin-bottom:10rpx;
+}
+.container .userwrapper .userItem .user-bg{
+  width:140rpx;
+  height:140rpx;
+  margin:0 auto;
+  border-radius:50%;
+  background-color: #ddd;
+  /* background-image:url('../../images/pinke/avator_bg.png'); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .userwrapper .userItem .add{
+  width:70%;
+  height:70%;
+  margin-right:4%;
+}
+.container .userwrapper .userItem .avator{
+  border-radius:50%;
+  margin-right:0;
+}
+
+.container .textwrapper{
+  width:85%;
+  box-sizing: border-box;
+  padding:20rpx 30rpx;
+  background-color: #c8e4d0;
+  margin:0 auto;
+  border-radius:10rpx;
+}
+.container .textwrapper .textItem{
+  margin-bottom:20rpx;
+}
+.container .textwrapper .textItem:last-child{
+  margin-bottom:10rpx;
+}
+.container .textwrapper .textItem .txt{
+  display: inline-block;
+  padding:10rpx 20rpx;
+  color:#74af8d;
+  background-color: #b8dbbe;
+  border-radius: 8rpx;
+  box-shadow: -8rpx 8rpx 10rpx #a4bfab;
+}
+.container .btn{
+  width:30%;
+  padding:20rpx;
+  margin:100rpx auto 20rpx;
+  text-align: center;
+  font-size:32rpx;
+  font-weight:bold;
+  border-radius: 10rpx;
+  background-color: #c4dbc4;
+  color:#3d8764;
+  box-shadow: -8rpx 8rpx 12rpx #848687;
+}
+
+

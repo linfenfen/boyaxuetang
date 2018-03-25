@@ -1,0 +1,21 @@
+/*选项卡*/
+.selectTab{
+  display:flex;
+  flex-direction: row;
+  align-items:center;
+  width:96%;
+  border:1px solid #b3dbc0;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  margin:20rpx 2%;
+}
+.selectTab .tab{
+  width:50%;
+  font-size: 28rpx;
+  font-weight: bold;
+  text-align: center;
+  padding:12rpx 0;
+}
+.selectTab .tab.activeTab{
+  background-color:#b3dbc0;
+}

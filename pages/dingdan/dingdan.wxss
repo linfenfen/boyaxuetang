@@ -1,0 +1,74 @@
+/* pages/dingdan/dingdan.wxss */
+.container{
+  position:static;
+}
+.container .dingdanDetail{
+  display:flex;
+  align-items:flex-start;
+  width:85%;
+  box-sizing: border-box;
+  margin:40rpx 0 100rpx 20rpx;
+  padding:10rpx;
+  border-radius: 15rpx;
+}
+.container .dingdanDetail .left{
+  flex:0 0 160rpx;
+  height:160rpx;
+}
+.container .dingdanDetail .right{
+  flex:1;
+}
+.container .dingdanDetail .item{
+  font-size:24rpx;
+  margin-bottom:10rpx;
+  /* color:#22863e; */
+}
+.container .dingdanDetail .item .name{
+  font-size:36rpx;
+  font-weight: bold;
+  color:#000000;
+}
+.container .dingdanDetail .item .lf{
+  display:flex;
+  justify-content: space-between;
+}
+.container .dingdanDetail .item .money{
+  font-size:30rpx;
+  font-weight: bold;
+  color:#c40000;
+}
+.container .dingdanDetail .item .money{
+  font-size:30rpx;
+  font-weight: bold;
+  color:#c40000;
+}
+.container .dingdanDetail .item .time{
+  color:#dfdfdf;
+}
+.container .btnGroup{
+  padding:0 20rpx;
+  margin-bottom:60rpx;
+}
+.container .btnGroup .btn{
+  background-color: #fff;
+  border:4rpx solid #8bc899;
+  font-size:30rpx;
+  color:#22863e;
+}
+.container .btnGroup.payGroup{
+  position: absolute;
+  left:0;
+  right:0;
+  bottom:20rpx;
+  margin-bottom:0;
+}
+.container .btnGroup .paybtn{
+  color:#fff;
+  font-weight:bold;
+  border:0;
+}
+.container .btnGroup .paybtn:first-child{
+  width:80%;
+  margin:0 auto;
+  background-color: #e9611d;
+}

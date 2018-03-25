@@ -1,0 +1,48 @@
+<!--pages/courseDetail/courseDetail.wxml-->
+<view class='container'>
+  <view class='user'>
+    <image class='userImg' src='https://www.boyaxuetang.top/boya/{{class.teacherImagePath}}'></image>
+    <text class='userName'><text class='modifybtn'>关注</text>{{class.teacherName}}</text>
+  </view>
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">    
+      <block wx:for="{{movies}}" wx:for-index="index" wx:key="index">    
+        <swiper-item>    
+          <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>    
+        </swiper-item>    
+      </block>    
+    </swiper>
+    <view class='courseTitle'>
+      <text>{{class.className}}</text>
+    </view>
+    <view class='courseIntroduce'>
+      <view>简介：{{class.description}}</view>
+      <view>地点：{{class.classRoom}}</view>
+      <view>
+        <text>单人价格：￥{{class.singlePrice}}</text>
+        <text wx:if='{{class.isAllowGroup==1}}'>团购价格：￥{{class.groupPrice}}  ({{class.groupNumberLimit}}人成团)</text>
+        <text wx:elif='{{class.isAllowGroup==2}}'>团购已截止</text>
+      </view>
+      <view>
+        <text>开课时间：{{class.classBeginTime}}</text>
+        <text>结束时间：{{class.classEndTime}}</text>
+      </view>
+      <view>
+        <text>备注：开课需满{{class.countNumber}}/{{class.numberLimit}}</text>
+        <text>最大上限：{{class.maxNumber}}</text>
+      </view>
+    </view>
+    <view class='commitwrapper'>
+      <view class='title'>学生评价</view>
+      <view class='commit'>
+        <view class='commit-item'>挺好的，老师人不错</view>
+        <view class='commit-item'>系统自动好评</view>
+      </view>
+    </view>
+</view>
+<view class='navigationBar'>
+  <block wx:if='{{class.status==2}}'>
+    <view class='item' catchtap='onJumpBack' data-url='/pages/payMoney/payMoney?classId={{class.id}}'><text>约课</text></view>
+    <view class='item' wx:if='{{class.isAllowGroup}}' catchtap='onJumpBack' data-url='/pages/pinke/pinke?classId={{class.id}}'><text>拼课</text></view>
+  </block>
+  <view wx:elif='{{class.status==5}}' class='item'><text>已停止</text></view>
+</view>

@@ -1,0 +1,99 @@
+<!--pages/publishClass/publishClass.wxml-->
+<import src='/pages/wxml/navigation.wxml' />
+<view class='container'>
+  <view class='formwrapper'>
+    <form bindsubmit='formSubmit' bindreset='formReset'>
+      <view class='line'>
+        <view class='left'>课程名称</view>
+        <view class='right'>
+          <input name='className' type='text'></input>
+        </view>
+      </view>
+      <view class='line'>
+        <view class='left'>开课地点</view>
+        <view class='right'>
+          <input name='classRoom' type='text' placeholder='如需提供场地，请联系客服'></input>
+        </view>
+      </view>
+      <view class='line'>
+        <view class='left'>开课时间</view>
+        <view class='right'>
+          <input name='classBeginTime' type='text' placeholder='格式（yyyy-MM-dd hh:mm:ss）'></input>
+        </view>
+      </view>
+      <view class='line'>
+        <view class='left'>结束时间</view>
+        <view class='right'>
+          <input name='classEndTime' type='text' placeholder='格式（yyyy-MM-dd hh:mm:ss）'></input>
+        </view>
+      </view>
+      <view class='line'>
+        <view class='item'>
+          <view class='left'>单人价格</view>
+          <view class='right'>
+            <input name='singlePrice' type='number'></input>
+          </view>
+        </view>
+        <view class='item'>
+          <view class='left'>人数下线</view>
+          <view class='right'>
+            <input name='numberLimit' type='number'></input>
+          </view>
+        </view>
+        <view class='item'>
+          <view class='left'>人数上限</view>
+          <view class='right'>
+            <input name='maxNumber' type='number'></input>
+          </view>
+        </view>
+      </view>
+      <view class='line'>
+        <view class='item'>
+          <view class='left'>所属类别</view>
+          <view class='right pikerwrapper'>
+            <picker name='classTypeId' bindchange="bindPickerChange" value="{{rangeIndex}}" range="{{rangeArr}}">
+              <view class="picker">
+                {{rangeArr[rangeIndex]}}
+              </view>
+          </picker>
+          </view>
+        </view>
+        <view class='item'>
+          <view class='left'></view>
+          <view class='right'>
+            <label>
+              <radio catchtap='agree' checked='{{yes}}' value='{{yes==true?1:0}}'></radio>是否允许拼课
+            </label>
+          </view>
+        </view>
+      </view>
+      <view class='line' wx:if='{{yes}}'>
+        <view class='item'>
+          <view class='left'>拼课价格</view>
+          <view class='right'>
+            <input name='groupPrice' type='number'></input>
+          </view>
+        </view>
+        <view class='item'>
+          <view class='left'>拼课人数</view>
+          <view class='right'>
+            <input name='groupNumberLimit' type='number'></input>
+          </view>
+        </view>
+      </view>
+      <view class='courseIntroduction'>
+        <view class='title'>课程介绍</view>
+        <view class='addImage'>
+        </view>
+        <view class='textwrapper'>
+          <textarea name='description'></textarea>
+        </view>
+      </view>
+      <input name='teacherId' type='hidden' value='{{teacher.id}}'/>
+      <input name='classImage' type='hidden' value='/test.jpg'/>
+      <input name='isAllowGroup' type='hidden' value='{{yes==true?1:0}}'/>
+      <button type='submit' class='submitBtn' disabled='' form-type='submit'>提交</button>
+    </form>
+  </view>
+</view>
+<template is='navigation' data='{{navigationUrl}}'/>

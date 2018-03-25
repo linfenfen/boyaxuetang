@@ -1,0 +1,50 @@
+<!--pages/payMoney/payMoney.wxml-->
+<view class='container'>
+  <view class='classDetail'>
+    <view class='item'>
+      <view class='name'>课程名称:</view>
+      <view class='content'>{{class.className}}</view>
+    </view>
+    <view class='item'>
+      <view class='name'>开课时间:</view>
+      <view class='content'>{{class.classBeginTime}}</view>
+    </view>
+     <view class='item'>
+      <view class='name'>结束时间:</view>
+      <view class='content'>{{class.classEndTime}}</view>
+    </view>
+    <view class='item'>
+      <view class='name'>开课地点:</view>
+      <view class='content'>{{class.classRoom}}</view>
+    </view>
+    <view class='item'>
+      <view class='name'>人数:</view>
+      <view class='content'>{{class.countNumber}}/{{class.maxNumber
+}}人 （最少开团人数：{{class.numberLimit}}）</view>
+    </view>
+    <!-- <view class='item'>
+      <view class='name'>评分:</view>
+      <view class='content'></view>
+    </view> -->
+    <view class='item'>
+      <view class='name'>价格:</view>
+      <view class='content'>{{class.singlePrice}}元/人。<text wx:if='{{class.isAllowGroup}}'>拼课{{class.groupPrice}}元/人</text></view>
+    </view>
+  </view>
+  <view class='btnGroup'>
+    <!-- <button class='btn'>拼课5元/人</button> -->
+    <button wx:if='{{class.isAllowGroup&&pin!=1}}' class='btn' catchtap='onJumpBack' data-url='/pages/pinke/pinke?classId={{class.id}}'>参与拼课</button>
+  </view>
+  <view class='payMode'>
+  </view>
+  <view wx:if='{{class.status==2}}' class='btnGroup payGroup'>
+    <button class='btn paybtn'>实付款 ￥{{pin==1?class.groupPrice:class.singlePrice}}</button>
+    <button class='btn paybtn' catchtap='chooseClass'>提交订单</button>
+  </view>
+  <view  wx:elif='{{class.status==3}}' class='btnGroup payGroup'>
+    <button class='btn paybtn' catchtap='chooseClass'>已满员</button>
+  </view>
+   <view  wx:elif='{{class.status>3}}' class='btnGroup payGroup'>
+    <button class='btn paybtn' catchtap='chooseClass'>已停止</button>
+  </view>
+</view>

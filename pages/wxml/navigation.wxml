@@ -1,0 +1,16 @@
+<template name='navigation'>
+<view class='navigationBar'>
+  <view class='item' catchtap='onJump' data-url='/pages/mainIndex/mainIndex' data-flag='{{navigationUrl.findClass}}'>
+    <image  src='/images/icon/findClass.png'></image>
+    <text>发现课程</text>
+  </view>
+  <view class='item' catchtap='onJump' data-url='/pages/myClass/myClass' data-flag='{{navigationUrl.myClass}}'>
+    <image  src='/images/icon/myClass.png'></image>
+    <text>我的课程</text>
+  </view>
+  <view class='item' catchtap='onJump' data-url='/pages/userCenter/userCenter' data-flag='{{navigationUrl.userCenter}}'>
+    <image src='/images/icon/userCenter1.png'></image>
+    <text>个人中心</text>
+  </view>
+</view>
+</template>
