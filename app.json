@@ -1,8 +1,8 @@
 {
   "pages":[
+    "pages/mainIndex/mainIndex",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/mainIndex/mainIndex",
     "pages/myClass/myClass",
     "pages/userCenter/userCenter",
     "pages/becomeMonito/becomeMonito",

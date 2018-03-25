@@ -8,15 +8,15 @@
     </view>
   </view>
   <view class='classify'>
-    <view class='item' wx:for='{{classTypeData}}' wx:for-item='classType' wx:key='{{classType.id}}' data-id='{{classType.id}}'>
+    <view class='item' wx:for='{{classTypeData}}' wx:for-item='classType' wx:key='{{classType.id}}' data-id='{{classType.id}}' catchtap='chooseType'>
       <image src='https://www.boyaxuetang.top/boya/{{classType.imagePath}}'></image>
       <text>{{classType.typeName}}</text>
     </view>
-    <!-- <view class='item'>
-      <image src='/images/classify/draw.png'></image>
-      <text>绘画</text>
+    <view class='item more' catchtap='chooseType' data-id='-1'>
+      <image src='https://www.boyaxuetang.top/boya/upload/image/2018032521470847643463275.png'></image>
+      <text>更多</text>
     </view>
-    <view class='item'>
+   <!-- <view class='item'>
       <image src='/images/classify/perform.png'></image>
       <text>表演</text>
     </view>
@@ -44,7 +44,7 @@
   <view class='hotClass'>
     <text class='hotTitle'>热门课程</text>
     <view class='classBox'>
-      <navigator url='/pages/courseDetail/courseDetail?classId={{item.classId}}' class='classItem' wx:for='{{classData}}' wx:for-item='item' wx:key='{{item.classId}}' wx:if='{{item.status==0}}'>
+      <navigator url='/pages/courseDetail/courseDetail?classId={{item.classId}}' class='classItem' wx:for='{{classData}}' wx:for-item='item' wx:key='{{item.classId}}' wx:if='{{item.status==0&&((item.classType==nowType)||(nowType==-1))}}'>
         <view class='leftItem'>
           <image src='https://www.boyaxuetang.top/boya/{{item.classImagePath}}'></image>
         </view>

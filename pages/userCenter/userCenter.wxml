@@ -3,7 +3,7 @@
 <view class='container'>
   <view class='user'>
     <image class='userImg' catchtap='chooseImg' src='https://www.boyaxuetang.top/boya/{{user.imagePath}}'></image>
-    <text class='userName'  catchtap='showModifyBox'><text class='modifybtn'>修改</text>{{user.userName}}</text>
+    <text class='userName'  catchtap='showModifyBox'>{{user.userName}}</text>
   </view>
   <view class='selectTab'>
     <navigator url='/pages/becomeMonito/becomeMonito' wx:if='{{user.userType!=1}}' class='activeTab'>成为大神</navigator>

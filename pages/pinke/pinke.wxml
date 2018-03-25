@@ -8,9 +8,9 @@
       </view>
     </view>
     <view class='userItem'>
-      <view catchtap='onShareAppMessage' class='user-bg'>
+      <button open-type='share' class='user-bg'>
         <image class='add' src='../../images/pinke/add.png' />
-      </view>
+      </button>
     </view>
     <view class='userItem'>
       <view class='user-bg'>

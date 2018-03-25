@@ -16,7 +16,9 @@ Page({
       findClass: false,
       myClass: true,
       userCenter:true
-    }
+    },
+    //当前选择的分类
+    nowType:-1,
   },
 
   /**
@@ -94,5 +96,10 @@ Page({
   onJumpBack(event){
     const url=event.currentTarget.dataset.url;
     this.dbFunc.jumpToBack(url);
+  },
+  chooseType(event){
+    this.setData({
+      nowType: event.currentTarget.dataset.id
+    })
   }
 })

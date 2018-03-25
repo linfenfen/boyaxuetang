@@ -6,54 +6,74 @@
       <view class='line'>
         <view class='left'>课程名称</view>
         <view class='right'>
-          <input name='className' type='text'></input>
+          <input name='className' type='text' bindinput='classNameInput'></input>
         </view>
       </view>
       <view class='line'>
         <view class='left'>开课地点</view>
         <view class='right'>
-          <input name='classRoom' type='text' placeholder='如需提供场地，请联系客服'></input>
+          <input name='classRoom' type='text' bindinput='classRoomInput' placeholder='如需提供场地，请联系客服'></input>
         </view>
       </view>
       <view class='line'>
         <view class='left'>开课时间</view>
-        <view class='right'>
-          <input name='classBeginTime' type='text' placeholder='格式（yyyy-MM-dd hh:mm:ss）'></input>
+        <view class='right two'>
+          <picker data-flag='1' mode="date" value="{{begindate}}" start="{{startDate}}" end="2018-10-01" bindchange="bindDateChange">
+            <view class="picker half">
+              {{begindate}}
+            </view>
+          </picker>
+          <picker data-flag='1' mode="time" value="{{begintime}}" start="00:01" end="23:59" bindchange="bindTimeChange">
+            <view class="picker half">
+              {{begintime}}
+            </view>
+          </picker>
         </view>
+        <input class='half' name='classBeginTime' type='hidden' value='{{enddate+" "+endtime+":00"}}'></input> 
       </view>
       <view class='line'>
         <view class='left'>结束时间</view>
-        <view class='right'>
-          <input name='classEndTime' type='text' placeholder='格式（yyyy-MM-dd hh:mm:ss）'></input>
+        <view class='right two'>
+          <picker data-flag='0' mode="date" value="{{enddate}}" start="{{begindate}}" end="2018-10-01" bindchange="bindDateChange">
+            <view class="picker half">
+              {{enddate}}
+            </view>
+          </picker>
+          <picker data-flag='0' mode="time" value="{{endtime}}" start="00:01" end="23:59" bindchange="bindTimeChange">
+            <view class="picker half">
+              {{endtime}}
+            </view>
+          </picker>
         </view>
+        <input name='classEndTime' type='hidden' value='{{enddate+" "+endtime+":00"}}'></input>
       </view>
       <view class='line'>
         <view class='item'>
           <view class='left'>单人价格</view>
           <view class='right'>
-            <input name='singlePrice' type='number'></input>
+            <input name='singlePrice' type='number' bindinput='singlePriceInput'></input>
           </view>
         </view>
         <view class='item'>
           <view class='left'>人数下线</view>
           <view class='right'>
-            <input name='numberLimit' type='number'></input>
+            <input name='numberLimit' type='number' bindinput='numberLimitInput'></input>
           </view>
         </view>
         <view class='item'>
           <view class='left'>人数上限</view>
           <view class='right'>
-            <input name='maxNumber' type='number'></input>
+            <input name='maxNumber' type='number' bindinput='maxNumberInput'></input>
           </view>
         </view>
       </view>
       <view class='line'>
         <view class='item'>
           <view class='left'>所属类别</view>
-          <view class='right pikerwrapper'>
-            <picker name='classTypeId' bindchange="bindPickerChange" value="{{rangeIndex}}" range="{{rangeArr}}">
+          <view class='right'>
+            <picker name='classTypeId' range-key='{{"typeName"}}' bindchange="bindPickerChange" value="{{rangeArr[rangeIndex].id}}" range="{{rangeArr}}">
               <view class="picker">
-                {{rangeArr[rangeIndex]}}
+                {{rangeArr[rangeIndex].typeName}}
               </view>
           </picker>
           </view>
@@ -83,16 +103,19 @@
       </view>
       <view class='courseIntroduction'>
         <view class='title'>课程介绍</view>
-        <view class='addImage'>
-        </view>
         <view class='textwrapper'>
-          <textarea name='description'></textarea>
+          <view class='addImage'>
+            <image catchtap='addImage' wx:if='{{pic==""}}' src='https://www.boyaxuetang.top/boya/upload/image/2018032522351219039459528.png'></image>
+            <image wx:else src='https://www.boyaxuetang.top/boya/{{pic}}'></image>
+        </view>
+          <textarea name='description' bindinput='descriptionInput'></textarea>
         </view>
       </view>
+      <view class='notice' wx:if='{{className==""||classRoom==""||singlePrice==""||numberLimit==""||maxNumber==""||description==""||begindate==""||begintime==""||enddate==""||endtime==""||pic==""}}'>请继续填写信息,否则不能提交课程</view>
       <input name='teacherId' type='hidden' value='{{teacher.id}}'/>
-      <input name='classImage' type='hidden' value='/test.jpg'/>
+      <input name='classImage' type='hidden' value='{{pic}}'/>
       <input name='isAllowGroup' type='hidden' value='{{yes==true?1:0}}'/>
-      <button type='submit' class='submitBtn' disabled='' form-type='submit'>提交</button>
+      <button type='submit' class='submitBtn' disabled='{{className==""||classRoom==""||singlePrice==""||numberLimit==""||maxNumber==""||description==""||begindate==""||begintime==""||enddate==""||endtime==""||pic==""}}' form-type='submit'>提交</button>
     </form>
   </view>
 </view>

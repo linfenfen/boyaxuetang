@@ -6,6 +6,7 @@
   left:0;
   right:0;
   bottom:140rpx;
+  background-image: url('https://www.boyaxuetang.top/boya/upload/image/2018032521021180972842453.png');
 }
 .container .formwrapper{
   width:100%;
@@ -36,6 +37,20 @@
   box-sizing:border-box;
   border:1px solid #78502c;
 }
+.container .formwrapper .line .right.two{
+  display:flex;
+  justify-content: space-between;
+}
+.container .formwrapper .line .right picker{
+  width:46%;
+}
+.container .formwrapper .line .right .picker.half{
+  width:100%;
+  height:50rpx;
+  padding:0 10rpx;
+  display:inline-block;
+  box-sizing:border-box;
+}
 .container .formwrapper .line .item{
   margin-right: 20rpx;
   flex:1;
@@ -51,7 +66,7 @@
   width:unset;
   margin-right:10rpx;
 }
-.container .formwrapper .line .item .right.pikerwrapper{
+.container .formwrapper .line .right .picker{
   width:100%;
   box-sizing:border-box;
   border:1px solid #78502c;
@@ -70,13 +85,21 @@
   font-weight: bold;
   margin-bottom:40rpx;
 }
+.container .formwrapper .courseIntroduction .addImage image{
+  width:200rpx;
+  height:120rpx;
+}
 .container .formwrapper .courseIntroduction .textwrapper{
   width:90%;
   margin:0 auto 60rpx;
-  border:1px solid #78502c;
 }
 .container .formwrapper .courseIntroduction .textwrapper textarea{
+  position: static;
+  box-sizing:border-box;
+  width:100%;
+  height:100rpx;
   padding:10rpx;
+  border:1px solid #78502c;
 }
 .container .submitBtn{
   width:35%;
@@ -87,6 +110,10 @@
   border:0;
   border-radius:15rpx;
   box-shadow: -4rpx 4rpx 8rpx #c1c8c6;
-  /* color:#077225;
-  background-color:#bbefd9; */
+  /* color:#077225;*/
+  background-color:#bbefd9; 
+}
+.notice{
+  text-align:center;
+  color:#c40000;
 }

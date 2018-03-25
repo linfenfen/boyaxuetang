@@ -3,28 +3,33 @@
 <view class='container'>
   <view class='selectTab'>
     <text class='tab {{selectNum==0?"activeTab":""}}' catchtap='onSelectTab' data-id='0'>待上</text>
-    <text class='tab {{selectNum==1?"activeTab":""}}' catchtap='onSelectTab' data-id='1'>未上</text>
+    <text class='tab {{selectNum==1?"activeTab":""}}' catchtap='onSelectTab' data-id='1'>已上</text>
   </view>
   <view class='classBox'>
-    <view class='classItem' wx:for='{{classData}}' wx:for-item='item' wx:key='{{item.id}}'>
+    <view class='classItem' wx:for='{{selectNum==0?haveClass:hadClass}}' wx:for-item='item' wx:key='{{item.id}}'>
       <view class='leftItem'>
           <image src='{{item.image}}'></image>
         </view>
         <view class='midItem'>
-          <text class='itemName'>课程 {{item.title}}</text>
-          <text class='time'>时间 {{item.time}}</text>
-          <text class='address'>地点 {{item.address}}</text>
+          <text class='itemName'>课程 {{item.className}}</text>
+          <text class='time'>时间 {{item.classBeginTime}}</text>
+          <text class='address'>地点 {{item.classRoom}}</text>
           <text class='kong'></text>
         </view>
-        <view class='rightItem'>
+        <!-- <view class='rightItem' wx:if='{{selectNum==0}}'>
           <text class='kong'></text>
           <text class='kong'></text>
-          <text class='comment'>查看评价</text>
+          <text class='comment'>退款</text>
         </view>
+         <view class='rightItem' wx:else>
+          <text class='kong'></text>
+          <text class='kong'></text>
+          <text class='comment'>评价</text>
+        </view> -->
     </view>
   </view>
-  <view class='becomeMastar'>
-    <text>我也想成为达人!</text>
-  </view>
+   <view class='becomeMastar' catchtap='addImage'>
+    <text>上传图片</text>
+  </view> 
 </view>
 <template is='navigation' data='{{navigationUrl}}'/>

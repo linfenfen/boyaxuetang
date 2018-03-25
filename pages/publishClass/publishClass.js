@@ -12,12 +12,25 @@ Page({
       myClass: true,
       userCenter: true
     },
-    rangeArr: ["a", "b"],
+    rangeArr: [],
     rangeIndex: 0,
    //是否拼课
     yes:false,
     user:{},
-    teacher:{}
+    teacher:{},
+    pic:'',
+    begindate:'',
+    begintime:'',
+    enddate:'',
+    endtime:'',
+    startDate:'',
+    //input 绑定的一些数据
+    className:'',
+    classRoom:'',
+    singlePrice:'',
+    numberLimit:'',
+    maxNumber:'',
+
   },
 
   /**
@@ -27,8 +40,14 @@ Page({
     this.dbFunc = new DBFunc();
     const _this =this;
     const user = wx.getStorageSync('user');
+    const classType = wx.getStorageSync('classType');
+    //获取日期
+    const data = new Date();
+    const startDate = data.toLocaleDateString();
     this.setData({
-      user:user
+      user:user,
+      rangeArr:classType,
+      startDate: startDate
     })
     wx.request({
       url: URL +'/teacher/getByUserId',
@@ -108,6 +127,97 @@ Page({
     this.setData({
       yes:!this.data.yes
     })
+  },
+  //选择器
+  bindPickerChange(e){
+    this.setData({   
+      rangeIndex: e.detail.value
+    })
+  },
+  bindDateChange(e){
+    const flag = e.currentTarget.dataset.flag;
+    if(flag==1){
+      //flag=1代表开课时间
+      this.setData({
+        begindate: e.detail.value
+      })
+    }else{
+      this.setData({
+        enddate: e.detail.value
+      })
+    }
+  },
+  bindTimeChange(e){
+    const flag = e.currentTarget.dataset.flag;
+    if (flag == 1) {
+      //时间不能比开课时间早
+      const begin = this.data.begindate + e.detail.value;
+      const end = this.data.enddate + this.data.endtime;
+      this.setData({
+        begintime: e.detail.value
+      })
+    } else {
+      //时间不能比开课时间早
+      const begin = this.data.begindate + this.data.begintime;
+      const end = this.data.enddate + e.detail.value;
+      if (begin > end) {
+        this.setData({
+          endtime: ''
+        })
+      } else {
+        this.setData({
+          endtime: e.detail.value
+        })
+      }
+    }
+  },
+  //绑定的input事件
+  classNameInput(event){
+    this.setData({
+      className:event.detail.value
+    })
+  },
+  classRoomInput(event) {
+    this.setData({
+      classRoom: event.detail.value
+    })
+  },
+  singlePriceInput(event) {
+    this.setData({
+      singlePrice: event.detail.value
+    })
+  },
+  numberLimitInput(event) {
+    this.setData({
+      numberLimit: event.detail.value
+    })
+  },
+  maxNumberInput(event) {
+    this.setData({
+      maxNumber: event.detail.value
+    })
+  },
+  //添加图片
+  addImage() {
+    const _this = this;
+    wx.chooseImage({
+      count: 1, // 默认9
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success: res => {
+        console.log("选择图片")
+        _this.dbFunc.uploadImage(URL, res, _this.bindImage)
+      }
+    })
+  },
+  //绑定已选择的图片
+  bindImage(res) {
+    //返回的服务器图像路径
+    const imgUrl = JSON.parse(res.data).data.imagePath;
+    this.setData({
+      pic: imgUrl
+    })
+    console.log("设置图片成功")
   },
   formSubmit(event){
     const formData = event.detail.value;

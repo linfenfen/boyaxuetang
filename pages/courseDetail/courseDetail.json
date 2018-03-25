@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText":"课程信息"
+  "navigationBarTitleText":"课程信息",
+  "disableScroll": true
 }

@@ -31,13 +31,13 @@
         <text>最大上限：{{class.maxNumber}}</text>
       </view>
     </view>
-    <view class='commitwrapper'>
+    <!-- <view class='commitwrapper'>
       <view class='title'>学生评价</view>
       <view class='commit'>
         <view class='commit-item'>挺好的，老师人不错</view>
         <view class='commit-item'>系统自动好评</view>
       </view>
-    </view>
+    </view> -->
 </view>
 <view class='navigationBar'>
   <block wx:if='{{class.status==2}}'>

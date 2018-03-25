@@ -29,6 +29,7 @@ class DBFunc{
       filePath: tempFilePath,
       success: res => {
         console.log("上传图片成功")
+        console.log(res);
         func(res)
       }
     })

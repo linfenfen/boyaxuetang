@@ -88,13 +88,13 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-    if (res.from === 'button') {
-      // 来自页面内转发按钮
-      console.log(res.target)
-    }
+  onShareAppMessage: function (res) {
+    // if (res.from === 'button') {
+    //   // 来自页面内转发按钮
+    //   console.log(res.target)
+    // }
     return {
-      title: '自定义转发标题',
+      title: '来来来，团购上车啦',
       path: '/pages/pinke/pinke?classId='+this.data.class.id,
       success: function (res) {
         // 转发成功
